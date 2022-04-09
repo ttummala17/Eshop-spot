@@ -2,10 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 
 const categorySchmea =  new mongoose.Schema({
-    categoryname:{
-        type: String,
-        required: true
-    }
+    categoryname:{ type: String, required: true }
 
 })
 
