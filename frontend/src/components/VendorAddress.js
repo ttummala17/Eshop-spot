@@ -1,3 +1,6 @@
+
+
+
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -122,6 +125,7 @@ function VendorAddress(props)  {
         setAddress(address => ({...address, [event.target.name]: event.target.value}));
       }
 
+      
   return (
     <ThemeProvider theme={theme}>
           { callFlag && <CustomizedSnackbars errAlert={errAlert} message={message}  /> }
@@ -142,27 +146,27 @@ function VendorAddress(props)  {
         <Grid item xs={12}>
           <TextField
             required
-            id="street1"
-            name="street1"
-            label={strings.Address.street1}
+            id= "street1"
+            name= "street1"
+            label= {strings.Address.street1}
             fullWidth
-            autoComplete="shipping address-line1"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.street1}
+            autoComplete= "shipping address-line1"
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.street1}
 
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="street2"
-            name="street2"
-            label={strings.Address.street2}
+            id= "street2"
+            name= "street2"
+            label= {strings.Address.street2}
             fullWidth
-            autoComplete="shipping address-line2"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.street2}
+            autoComplete= "shipping address-line2"
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.street2}
 
 
           />
@@ -170,14 +174,14 @@ function VendorAddress(props)  {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="city"
-            name="city"
-            label={strings.Address.city}
+            id= "city"
+            name= "city"
+            label= {strings.Address.city}
             fullWidth
-            autoComplete="shipping address-level2"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.city}
+            autoComplete= "shipping address-level2"
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.city}
 
 
           />
@@ -185,13 +189,13 @@ function VendorAddress(props)  {
         <Grid item xs={12} sm={6}>
           <TextField
             //required
-            id="state"
-            name="state"
-            label={strings.Address.state}
+            id= "state"
+            name= "state"
+            label= {strings.Address.state}
             fullWidth
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.state}
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.state}
 
 
           />
@@ -199,14 +203,14 @@ function VendorAddress(props)  {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="zipcode"
-            name="zipcode"
-            label={strings.Address.zip}
+            id= "zipcode"
+            name= "zipcode"
+            label= {strings.Address.zip}
             fullWidth
-            autoComplete="shipping postal-code"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.zipcode}
+            autoComplete= "shipping postal-code"
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.zipcode}
 
 
           />
@@ -214,26 +218,27 @@ function VendorAddress(props)  {
         <Grid item xs={12} sm={6}>
           <TextField
             required
-            id="country"
-            name="country"
-            label={strings.Address.country}
+            id= "country"
+            name= "country"
+            label= {strings.Address.country}
             fullWidth
-            autoComplete="shipping country"
-            variant="outlined"
-            onChange={handleInputChange}
-            value={address.country}
+            autoComplete= "shipping country"
+            variant= "outlined"
+            onChange= {handleInputChange}
+            value= {address.country}
 
 
           />
         </Grid>
         <Grid item xs={12}>
         <Button
-              type="submit"
+              type= "submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Submit
+
         </Button>
         </Grid>
       </Grid>
@@ -241,6 +246,7 @@ function VendorAddress(props)  {
       </Container>
       </ThemeProvider>
   );
+
 }
 
 export default withRoot(VendorAddress);
