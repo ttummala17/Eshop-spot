@@ -12,12 +12,15 @@ const customerAuth = async(req,res,next) =>{
             const Auth = req.body.headers.Authorization
             token = Auth.replace('Bearer ','')
         }
+        
+        
         console.log('token verify', token)
         const decoded = jwt.verify(token,process.env.TOKEN_SECRET)
 
         console.log(decoded)
         const customer = await Customer.findOne({_id:decoded._id,'tokens.token':token})
         console.log('after customer')
+        
         if(!customer){
             console.log(customer)
 
@@ -31,7 +34,8 @@ const customerAuth = async(req,res,next) =>{
         console.log(token)
    
 
-    }catch(e){
+    }
+    catch(e){
         console.log("here in auth error customer")
         res.status(401).send({error: "Please authenticate"})
     }
