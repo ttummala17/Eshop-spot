@@ -1,10 +1,12 @@
 body {
   margin: 0;
+  left-margin: 0;
+  right-margin: 0;	
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing:  grayscale;
 }
 
 code {
@@ -79,8 +81,8 @@ code {
 	display: block;
 	/* 3rd party <SVG/> flag icons won't stretch if they have `width` and `height`.
 	   Also, if an <SVG/> icon's aspect ratio was different, it wouldn't fit too. */
-	width: 100%;
-	height: 100%;
+	width:  100%;
+	height:  100%;
 }
 
 .PhoneInputInternationalIconPhone {
@@ -107,8 +109,8 @@ code {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	z-index: 1;
-	border: 0;
+	z-index:  1;
+	border:  0;
 	opacity: 0;
 	cursor: pointer;
 }
