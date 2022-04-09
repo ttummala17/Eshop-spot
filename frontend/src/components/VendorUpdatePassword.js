@@ -1,3 +1,5 @@
+
+
 /* eslint-disable no-unused-vars */
 import * as React from 'react';
 import  { useState } from "react"
@@ -33,7 +35,7 @@ import styles from '../assets/styles';
             user:{},
             password : "",
             confirmPassword : "",
-          callFlag:false,
+          callFlag: false,
           errAlert:"",
           message:"",
     
@@ -47,7 +49,6 @@ import styles from '../assets/styles';
             return false;
             
       }
-
 
       update(e){
 
@@ -65,6 +66,7 @@ import styles from '../assets/styles';
               'Content-Type': 'application/json;charset=UTF-8',
               "Authorization" : Bearer
             }
+           
           };
 
               axios.patch(process.env.REACT_APP_API_URL+"/vendors/me",jusJson,axiosConfig,{
@@ -74,22 +76,22 @@ import styles from '../assets/styles';
             console.log("customer updated")
 
                 this.setState({user:response.data})
-                this.setState({errAlert:"success"})
-                this.setState({message:"changes updated"})
-                this.setState({callFlag:true})
+                this.setState({errAlert: "success"})
+                this.setState({message: "changes updated"})
+                this.setState({callFlag: true})
             }).catch(error => {
-                this.setState({errAlert:"error"})
-                this.setState({message:"Something went wrong"})
-                this.setState({callFlag:true})
+                this.setState({errAlert: "error"})
+                this.setState({message: "Something went wrong"})
+                this.setState({callFlag: true})
                 console.log(error);
               });;
 
         }else{
           e.preventDefault();
 
-            this.setState({errAlert:"error"})
-            this.setState({message:"Passwords do not match"})
-            this.setState({callFlag:true})
+            this.setState({errAlert: "error"})
+            this.setState({message: "Passwords do not match"})
+            this.setState({callFlag: true})
         }
         
         console.log(jusJson)
@@ -123,35 +125,35 @@ render(){
                 <TextField
                   required
                   fullWidth
-                  name="password"
-                  label="New Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  value={this.state.password}
+                  name= "password"
+                  label= "New Password"
+                  type= "password"
+                  id= "password"
+                  autoComplete= "new-password"
+                  value= {this.state.password}
                   onChange={(e) => this.setState({password:e.target.value})}
                 />
               </Grid>
 
-              <Grid item xs={12}>
+              <Grid item xs= {12}>
                 <TextField
                   required
                   fullWidth
-                  name="confirmPassword"
-                  label="Confirm New Password"
-                  type="password"
-                  id="confirmPassword"
-                  autoComplete="new-password"
+                  name= "confirmPassword"
+                  label= "Confirm New Password"
+                  type= "password"
+                  id= "confirmPassword"
+                  autoComplete= "new-password"
                   value={this.state.confirmPassword}
                   onChange={(e) => this.setState({confirmPassword:e.target.value})}
                 />
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              type= "submit"
               fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              variant= "contained"
+              sx={{ mt : 3, mb : 2 }}
             >
               {strings.Common.update}
             </Button>
