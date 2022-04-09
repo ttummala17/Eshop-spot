@@ -1,7 +1,11 @@
+
+
 require('dotenv').config()
+
 var path = require('path')
 
 const express = require('express')
+
 const cors = require("cors")
 
 
@@ -16,7 +20,6 @@ const Order = require('./src/models/order')
 const Product = require('./src/models/product')
 const Currency = require('./src/models/currency')
 const Category = require('./src/models/category')
-
 const vendorRouter = require('./src/routers/vendor')
 const customerRouter = require('./src/routers/customer')
 const addressRouter = require('./src/routers/address')
@@ -42,6 +45,7 @@ app.set('port', port);
 // });
 
 
+
 // For parsing application / json.
 
 app.use(express.json({limit: '25mb'}));
@@ -49,8 +53,8 @@ app.use(express.urlencoded({limit: '25mb'}));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin:["http://localhost:3000"],
-    credentials:true
+    origin: ["http://localhost:3000"],
+    credentials: true
 }));
 
 // app.use(cors())
