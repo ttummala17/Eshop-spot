@@ -6,7 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+# app_logo
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,7 +23,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+#app_header_properties
 .App-link {
   color: #61dafb;
 }
