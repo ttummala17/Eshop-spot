@@ -52,11 +52,11 @@ const customerSchema = new mongoose.Schema({
         type: String,
         //required: true
     },
-    // countryCode:{
-    //     //can validate using validator
-    //     type: String,
-    //     required: true
-    // },
+    /* countryCode:{
+        //can validate using validator
+         type: String,
+         required: true
+    },*/
     address:{
         type: [mongoose.Schema.Types.ObjectId],
         ref:'Address'
@@ -108,16 +108,11 @@ customerSchema.methods.toJSON =  function(){
 
     delete customerObject.password
     delete customerObject.tokens
-
-
-
+    
     return customerObject
 
 
 }
-
-
-
 
 customerSchema.methods.generateAuthToken = async function(){
 
@@ -164,8 +159,6 @@ customerSchema.pre('remove',async function(next){
     next()
 
 })
-
-
 const Customer  = mongoose.model('Customer',customerSchema)
 
 module.exports =  Customer
