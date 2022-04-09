@@ -22,7 +22,7 @@ router.post('/cart/add', auth,async (req,res) =>{
     })
 })
 
-// //get all vendors 
+// get all vendors 
 router.get('/cart/all', async (req,res)=>{
     console.log('inside cart get all')
     
@@ -75,7 +75,7 @@ router.get('/cart/mine',auth, async (req,res)=>{
 
 
 
-// //update customer
+// update customer
 
 router.patch('/cart/mine',auth, async (req,res)=>{
     console.log("inside cart patch")
@@ -96,7 +96,8 @@ router.patch('/cart/mine',auth, async (req,res)=>{
             return res.status(404).send()
         }
         res.status(200).send(cart)
-    }catch(e){
+    }
+    catch(e){
         console.log(e)
         
             res.send(e)
@@ -163,7 +164,7 @@ router.patch('/cart/addProduct',auth, async (req,res)=>{
 
 
 
-// //delete vendor
+// delete vendor
 
 router.delete('/cart/:id', async (req,res)=>{
     const _id = req.params.id
@@ -210,7 +211,9 @@ router.get('/cartcount',auth, async (req,res)=>{
         const cartCount = { count: count }
         console.log("see here, ",cartCount)
         res.status(200).send(cartCount);
-    }catch(e){
+    }
+    catch(e)
+    {
         console.log(e)
         
             res.send(e)
