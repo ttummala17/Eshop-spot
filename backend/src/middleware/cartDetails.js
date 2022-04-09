@@ -4,6 +4,7 @@ const Cart = require('../models/cart')
 const Product = require('../models/product')
 
 //On order product quantity update, make cart isActive false, add new cart
+
 module.exports = async function cartDetails(order)
 {
     console.log("__ cart Detialslll ")
@@ -19,7 +20,8 @@ module.exports = async function cartDetails(order)
             try{
             const new_Cart = new Cart({owner:cart.owner})
             new_Cart.save()
-            }catch(err){
+            }
+        catch(err){
                 console.log(err)
             }
         cart.productlist.forEach(async item =>{
@@ -28,7 +30,8 @@ module.exports = async function cartDetails(order)
                 const prod =  await Product.findById({_id})
                 prod.quantity = prod.quantity - item.quantity
                 prod.save()
-            }catch(e){}
+            }
+            catch(e){}
         })
     
     }catch(err){
