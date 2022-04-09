@@ -42,7 +42,8 @@ app.set('port', port);
 // });
 
 
-// For parsing application/json
+// For parsing application / json.
+
 app.use(express.json({limit: '25mb'}));
 app.use(express.urlencoded({limit: '25mb'}));
 app.use(express.urlencoded({ extended: true }));
@@ -75,5 +76,5 @@ app.use(serviceRouter)
 
 
 app.listen(port,()=>{
-    console.log('server is up on port '+ port)
+    console.log('Server is up on port '+port)
 })
