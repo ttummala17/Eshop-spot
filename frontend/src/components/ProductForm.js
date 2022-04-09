@@ -76,6 +76,7 @@ export default function ProductForm(props) {
    const prodData ={
        name,description,price,quantity,size,color,photo,category,alt
    }
+   
    const Bearer = "Bearer "+ Cookies.get('token')
     console.log(Bearer)
    let axiosConfig = {
@@ -83,6 +84,7 @@ export default function ProductForm(props) {
         'Content-Type': 'application/json;charset=UTF-8',
         "Authorization" : Bearer
     }
+     
   };
  
    console.log(prodData)
@@ -91,6 +93,7 @@ export default function ProductForm(props) {
     const hitback = await axios.post(process.env.REACT_APP_API_URL+"/product/add",prodData,axiosConfig, {
         withCredentials: true
     });
+     
     setLoggedin(true)
     setErrAlert("success")
     setMessage("Product successfully added")
@@ -141,12 +144,12 @@ export default function ProductForm(props) {
                         <Grid container spacing={2}>
                             <Grid item xs={12} >
                                 <TextField
-                                    autoComplete="given-name"
-                                    name="name"
+                                    autoComplete= "given-name"
+                                    name= "name"
                                     required
                                     fullWidth
-                                    id="name"
-                                    label="Product Name"
+                                    id= "name"
+                                    label= "Product Name"
                                     autoFocus
                                     onChange={(e) => setName(e.target.value)} value={name}
                                 />
@@ -157,10 +160,10 @@ export default function ProductForm(props) {
                                     rows={2}
                                     rowsMax={4}
                                     fullWidth
-                                    id="description"
-                                    label="Description"
-                                    name="description"
-                                    autoComplete="family-name"
+                                    id= "description"
+                                    label= "Description"
+                                    name= "description"
+                                    autoComplete= "family-name"
                                     onChange={(e) => setDescription(e.target.value)} value={description}
                                 />
                             </Grid>
@@ -169,11 +172,11 @@ export default function ProductForm(props) {
                                 <TextField
                                     required
                                     fullWidth
-                                    id="price"
-                                    label="Price"
-                                    type="number"
-                                    name="price"
-                                    autoComplete="price"
+                                    id= "price"
+                                    label= "Price"
+                                    type= "number"
+                                    name= "price"
+                                    autoComplete= "price"
                                     onChange={(e) => setPrice(e.target.value)} value={price}
                                     
                                 />
@@ -182,11 +185,11 @@ export default function ProductForm(props) {
                                 <TextField
                                     required
                                     fullWidth
-                                    name="quantity"
-                                    label="Quantity"
-                                    type="number"
-                                    id="quantity"
-                                    autoComplete="quantity"
+                                    name= "quantity"
+                                    label= "Quantity"
+                                    type= "number"
+                                    id= "quantity"
+                                    autoComplete= "quantity"
                                     onChange={(e) => setQuantity(e.target.value)} value={quantity}
                                 />
                             </Grid>
@@ -194,10 +197,10 @@ export default function ProductForm(props) {
                                 <TextField
                                     
                                     fullWidth
-                                    id="size"
-                                    label="Size"
-                                    name="size"
-                                    autoComplete="family-name"
+                                    id= "size"
+                                    label= "Size"
+                                    name= "size"
+                                    autoComplete= "family-name"
                                     onChange={(e) => setSize(e.target.value)} value={size}
                                 />
                             </Grid>
@@ -205,10 +208,10 @@ export default function ProductForm(props) {
                                 <TextField
                                  
                                     fullWidth
-                                    id="color"
-                                    label="Color"
-                                    name="color"
-                                    autoComplete="family-name"
+                                    id= "color"
+                                    label= "Color"
+                                    name= "color"
+                                    autoComplete= "family-name"
                                     onChange={(e) => setColor(e.target.value)} value={color}
                                 />
                             </Grid>
@@ -224,11 +227,11 @@ export default function ProductForm(props) {
                                         //input={<Input id="select-label" />}
                                         value={''||category}
                                         onChange={(e) => setCategory(e.target.value)} 
-                                        id="category" 
-                                        name="category"
-                                        labelId='menuid'
+                                        id= "category" 
+                                        name= "category"
+                                        labelId= 'menuid'
                                         fullWidth
-                                        label="Category"
+                                        label= "Category"
                                         //defaultValue = ""
                                     >
 
@@ -255,12 +258,12 @@ export default function ProductForm(props) {
                             </Grid>
                             <Grid item xs={6} sm={9} >
                                 <TextField
-                                    variant="standard"
+                                    variant= "standard"
                                     fullWidth
-                                    id="alt"
-                                    label="Product image alt"
-                                    name="alt"
-                                    autoComplete="family-name"
+                                    id= "alt"
+                                    label= "Product image alt"
+                                    name= "alt"
+                                    autoComplete= "family-name"
                                     onChange={(e) => setAlt(e.target.value)} 
                                     value={alt}
                                 />
@@ -268,9 +271,9 @@ export default function ProductForm(props) {
                         </Grid>
 
                         <Button
-                            type="submit"
+                            type= "submit"
                             fullWidth
-                            variant="contained"
+                            variant= "contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
                             Add Products
@@ -283,4 +286,6 @@ export default function ProductForm(props) {
 
         </ThemeProvider>
     );
+
+
 }
