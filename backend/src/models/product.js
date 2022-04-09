@@ -43,14 +43,10 @@ const productSchema =  new mongoose.Schema({
     alt:{
         type: String
     },
-    category:{
-        type: String
-    }
-
+    category:{ type: String }
 
 })
 
 
 const Product  =  mongoose.model('Product',productSchema)
-
 module.exports = Product
