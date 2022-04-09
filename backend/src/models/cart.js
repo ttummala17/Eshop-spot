@@ -7,6 +7,7 @@ const cartSchema = new mongoose.Schema({
         required: true,
         ref:'Customer'
     },
+    
     status:{type: String},
     productlist:[{
         
@@ -14,10 +15,12 @@ const cartSchema = new mongoose.Schema({
         product:{
         type: mongoose.Schema.Types.ObjectId}
     }],
+    
     price:{
         type:Number,
         default: 0
     },
+    
     isActive:{
         type:Boolean,
         default: true
