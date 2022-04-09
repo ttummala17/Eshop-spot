@@ -1,3 +1,5 @@
+
+
 /* eslint-disable no-unused-vars */
 import * as React from 'react';
 import  { useState } from "react"
@@ -50,6 +52,7 @@ import styles from '../assets/styles';
         e.preventDefault();
 
               jusJson = {
+               
                   firstName:this.state.firstName,
                   lastName:this.state.lastName,
                   age:this.state.age,
@@ -58,6 +61,7 @@ import styles from '../assets/styles';
           const Bearer = "Bearer "+ Cookies.get('token')
             let axiosConfig = {
             headers: {
+             
                 'Content-Type': 'application/json;charset=UTF-8',
                 "Authorization" : Bearer
             }
@@ -79,6 +83,7 @@ import styles from '../assets/styles';
           this.setState({errAlert:"error"})
           this.setState({message:"Something went wrong"})
           console.log(error);
+    
         });;
               
           console.log(jusJson)
@@ -94,12 +99,13 @@ import styles from '../assets/styles';
          'Content-Type': 'application/json;charset=UTF-8',
          "Authorization" : Bearer
      }
+     
    };
  
           if(!Cookies.get('token')){
           this.setState.loggedin = true
           this.state.errAlert = "error"
-          this.state.message ="Only vendors can add products"
+          this.state.message = "Only vendors can add products"
          
       }
       axios.get(process.env.REACT_APP_API_URL+"/vendors/me",axiosConfig,{
@@ -117,6 +123,7 @@ import styles from '../assets/styles';
     }).catch(error => {
         console.log(error);
       });;
+  
     // this.setState.user = hitback
    
     
@@ -153,11 +160,11 @@ render(){
                 <TextField
                   required
                   fullWidth
-                  id="firstName"
+                  id= "firstName"
                   label={strings.SignUp.Labels.firstName}
-                  name="firstName"
-                  autoComplete="family-name"
-                  value={this.state.firstName}
+                  name= "firstName"
+                  autoComplete= "family-name"
+                  value= {this.state.firstName}
                   onChange={(e) => this.setState({firstName:e.target.value})}
                 />
               </Grid>
@@ -165,11 +172,11 @@ render(){
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id= "lastName"
                   label={strings.SignUp.Labels.lastName}
-                  name="lastName"
-                  autoComplete="family-name"
-                  value={this.state.lastName}
+                  name= "lastName"
+                  autoComplete= "family-name"
+                  value= {this.state.lastName}
                   onChange={(e) => this.setState({lastName:e.target.value})}
                 />
               </Grid>
@@ -178,29 +185,29 @@ render(){
               <Grid item xs={12} sm={6}>
                 <TextField
                   fullWidth
-                  id="age"
-                  label={strings.SignUp.Labels.age}
-                  name="age"
-                  value={this.state.age}
-                  onChange={(e) => this.setState({age:e.target.value})}
+                  id= "age"
+                  label= {strings.SignUp.Labels.age}
+                  name= "age"
+                  value= {this.state.age}
+                  onChange= {(e) => this.setState({age:e.target.value})}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
                   //required
                   fullWidth
-                  id="contact"
-                  label={strings.SignUp.Labels.contact}
-                  name="contact"
-                  value={this.state.contact}
+                  id= "contact"
+                  label= {strings.SignUp.Labels.contact}
+                  name= "contact"
+                  value= {this.state.contact}
                   onChange={(e) => this.setState({contact:e.target.value})}
                 />
               </Grid>
             </Grid>
             <Button
-              type="submit"
+              type= "submit"
               fullWidth
-              variant="contained"
+              variant= "contained"
               sx={{ mt: 3, mb: 2 }}
             >
               {strings.Common.update}
@@ -216,6 +223,9 @@ render(){
     </ThemeProvider>
     </>
   );
+
+
+
 
 }}
 export default withRoot(VendorUpdate);
