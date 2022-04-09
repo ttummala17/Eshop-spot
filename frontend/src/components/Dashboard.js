@@ -1,3 +1,5 @@
+
+
 import * as React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { useEffect } from 'react';
@@ -36,7 +38,7 @@ useEffect(() => {
 
 {console.log(props,"inside dashboard")}
     <Box
-      component="main"
+      component= "main"
 
     >
       <Toolbar />
@@ -45,7 +47,7 @@ useEffect(() => {
           {/* Chart */}
         
           {/* Recent Deposits */}
-          <Grid item xs={12} md={4} lg={3}>
+          <Grid item xs= {12} md= {4} lg= {3}>
             <Paper
               sx={{
                 p: 2,
@@ -91,13 +93,13 @@ useEffect(() => {
                 height: 240,
               }}
             >
-              <Deposits title="Total Orders" data={props.data.length}/>
+              <Deposits title= "Total Orders" data={props.data.length}/>
             </Paper>
           </Grid>
           {/* Recent Orders */}
-          <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-              <Orders data={props.data} />
+          <Grid item xs= {12}>
+            <Paper sx= {{ p: 2, display: 'flex', flexDirection: 'column' }}>
+              <Orders data= {props.data} />
             </Paper>
           </Grid>
         </Grid>
@@ -108,6 +110,7 @@ useEffect(() => {
   
     </ThemeProvider>
   );
+
 }
 
 // export default function Dashboard() {
