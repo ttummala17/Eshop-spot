@@ -1,3 +1,5 @@
+
+
 /* eslint-disable no-unused-vars */
 import bgimage from "./images/bg7.jpg";
 import homimage from "./images/gift1.png";
@@ -6,9 +8,9 @@ import homimage from "./images/gift1.png";
 
 
 const Header = {
-    padding: "10px 20px",
-    textAlign: "left",
-    height: "60px",
+    padding:  "10px 20px",
+    textAlign:  "left",
+    height:  "60px",
   }
 
   const Toolbar = {
