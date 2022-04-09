@@ -16,9 +16,7 @@ const currencySchmea =  new mongoose.Schema({
         type: String,
         required: true
     }
-
 })
 
 const Currency = mongoose.model('Currency',currencySchmea)
-
 module.exports =  Currency
